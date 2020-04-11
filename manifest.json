@@ -1,0 +1,30 @@
+{
+  "name": "Delivery Slot Selector for Amazon",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Buit to solve slot finding hassel",
+  "homepage_url": "https://praveengovind.com",
+  "icons": {
+    "16": "icons/box16.png",
+    "48": "icons/box64.png",
+    "128": "icons/box128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ],
+    "persistent": true
+  },
+  "options_page": "src/options_custom/index.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.amazon.com/gp/buy/shipoptionselect/handlers/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
